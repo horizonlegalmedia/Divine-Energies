@@ -53,8 +53,7 @@ const Consultation = React.forwardRef((props,ref) => {
             </div>
 
             <button className="mt-8 bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2">
-              {/* <CalendarIcon className="h-5 w-5" /> */}
-              Schedule Free Session
+              <a href="https://calendly.com/divineenergiesbyshradha/30min" target="_blank">Schedule Free Session</a>
             </button>
           </div>
 

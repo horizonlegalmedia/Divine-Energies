@@ -26,8 +26,8 @@ const Home = () => {
        <Navbar scrollToAboutUs={scrollToAboutUs} scrollToWhatIDo={scrollToWhatIDo} scrollToServices={scrollToServices}  scrollToConsultation={scrollToConsultation} scrollToLetsMeet={scrollToLetsMeet} />
 
       <AboutUs ref={aboutUsRef}/>
-      <WhatIDo ref={whatIDoRef}/>
       <Services ref={servicesRef}/>
+      <WhatIDo ref={whatIDoRef}/>
       <Consultation ref={consultationRef}/>
       <LetsMeet ref={letsMeetRef}/>
     </div>

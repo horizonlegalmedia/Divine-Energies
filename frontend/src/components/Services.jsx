@@ -4,43 +4,47 @@ import React from "react";
 
 const services = [
   {
-    title: "Essentials Package",
-    // icon: StarIcon,
-    price: "297",
+    title: "Starter Package",
+    time:"40 mins",
+    price: "199",
+    featuresTagline:"Video or Audio Call (Zoom)",
     features: [
-      "4 Weekly Manifestation Sessions",
-      "Custom Affirmation Library",
-      "Email Support",
-      "Basic Vision Board Setup"
+      "Magical tricks",
+      "Effective solutions",
+      "Positive mindset starts",
+      "Magical affirmations",
+      "Power of words & thoughts",
     ],
     popular: false
   },
   {
-    title: "Transformation Suite",
-    // icon: GiftIcon,
-    price: "597",
+    title: "Growth Package",
+    time:"60 mins",
+    price: "499",
+    featuresTagline:"Includes everything in ₹199 package PLUS:",
     features: [
-      "Unlimited Coaching Sessions",
-      "Personalized Meditation Plans",
-      "VIP Email & Chat Support",
-      "3D Vision Board Creation",
-      "Energy Clearing Sessions"
+      "How to unlock hidden powers",
+      "Deep dive into self-transformation",
+      "Special guided visualization technique",
+      "Overcoming self-doubt & fears",
+      "Action plan for personal growth",
     ],
     popular: true
   },
   {
-    title: "Elite Experience",
-    // icon: SparklesIcon,
-    price: "997",
+    title: "Elite Package",
+    time: "90 mins",
+    price: "999",
+    featuresTagline:" Includes everything in ₹499 package PLUS:",
     features: [
-      "All Transformation Suite Features",
-      "In-Person Retreat (2 days)",
-      "Crystal Energy Kit",
-      "Private Community Access",
-      "Annual Check-ins"
+      "Exclusive personalized affirmations",
+      "Manifestation techniques for success",
+      "Mind rewiring strategies for abundance",
+      "Powerful energy cleansing practice",
+      "One follow-up consultation (15 mins)"
     ],
     popular: false
-  }
+  },
 ];
 
 const Services = React.forwardRef((props,ref) => {
@@ -72,7 +76,7 @@ const Services = React.forwardRef((props,ref) => {
               }`}
             >
               {service.popular && (
-                <div className="absolute top-0 right-0 bg-purple-600 text-white px-4 py-1 rounded-bl-xl text-sm font-medium">
+                <div className="absolute top-0 right-0 bg-purple-600 text-white px-4 py-1 rounded-bl-xl rounded-tr-2xl text-sm font-medium">
                   Most Popular
                 </div>
               )}
@@ -82,9 +86,14 @@ const Services = React.forwardRef((props,ref) => {
                   {service.title}
                 </h3>
                 <div className="mb-6">
-                  <span className="text-4xl font-bold text-gray-900">${service.price}</span>
+                  <span className="text-3xl font-bold text-gray-900">Rs {service.price}</span>
                   <span className="text-gray-600">/ program</span>
+                  <span className="text-gray-900 font-bold">- ({service.time})</span>
                 </div>
+              </div>
+
+              <div className="mb-4 text-center font-bold">
+                {service.featuresTagline}
               </div>
               
               <ul className="space-y-3 mb-8">
@@ -103,7 +112,8 @@ const Services = React.forwardRef((props,ref) => {
                   ? 'bg-purple-600 text-white hover:bg-purple-700'
                   : 'border-2 border-purple-600 text-purple-600 hover:bg-purple-50'
               }`}>
-                Start Transformation
+                <a href="https://calendly.com/divineenergiesbyshradha/30min" target="_blank">Start Transformation</a>
+                
               </button>
             </div>
           ))}

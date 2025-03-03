@@ -31,8 +31,7 @@ const AboutUs = React.forwardRef((props, ref) => {
               Shradha Khandelwal
             </h1>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed text-justify">
-              I am a life coach focusing on manifestation and affirmations helps individuals clarify goals, shift mindset, and harness the power of thoughts to create desired outcomes. By fostering self-belief, personal growth, and accountability, she empowers clients to overcome obstacles, build confidence, and manifest lasting change for a fulfilling, intentional life.
-            </p>
+            As a life coach specializing in manifestation and affirmations, I help individuals unlock their true potential by guiding them to harness the power of their thoughts, beliefs, and intentions. Through proven techniques, I assist clients in shifting their mindset, gaining clarity on their goals, and overcoming limiting beliefs that hold them back. By fostering self-belief, personal growth, and accountability, I empower individuals to take control of their lives, build confidence, and manifest the success, happiness, and abundance they desire. With personalized affirmations and manifestation strategies, I support clients in creating lasting, positive transformations for a fulfilling and purpose-driven life.            </p>
 
           </div>
         </div>

@@ -11,9 +11,16 @@ const Navbar = ({ scrollToAboutUs, scrollToWhatIDo, scrollToServices, scrollToCo
         { name: "Let's Meet", scrollTo: scrollToLetsMeet },
     ];
 
-    const handleButtonClick = (item) => {
-        setIsMenuOpen(!isMenuOpen)
-    }
+    // Function to handle smooth scrolling
+    const scrollToSection = (ref) => {
+        if (ref.current) {
+            setIsMenuOpen(false); // Close the menu
+            window.scrollTo({
+                top: ref.current.offsetTop - 80, // Adjusting the offset
+                behavior: "smooth",
+            });
+        }
+    };
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
@@ -21,8 +28,8 @@ const Navbar = ({ scrollToAboutUs, scrollToWhatIDo, scrollToServices, scrollToCo
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     <div className="flex-shrink-0 flex items-center">
-                        <a href='/' className='flex'>
-                        <img src={logo} alt='Divine-Energies-logo' className='w-8 h-8' />
+                        <a href='/' className='flex items-center'>
+                            <img src={logo} alt='Divine-Energies-logo' className='w-12 h-12 md:w-14 md:h-14 rounded-full' />
                             <span className="ml-2 text-xl font-bold text-gray-900 ">DivineEnergies</span>
                         </a>
                     </div>
@@ -41,7 +48,7 @@ const Navbar = ({ scrollToAboutUs, scrollToWhatIDo, scrollToServices, scrollToCo
                     <div className="md:hidden flex items-center">
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="inline-flex items-center justify-center p-2 rounded-md hover:bg-slate-600 focus:outline-none"
+                            className="inline-flex items-center justify-center p-2 rounded-md hover:bg-purple-300 focus:outline-none"
                         >
                             {isMenuOpen ? <X size={24} /> : <Menu size={24} />} {/* Use react-lucide icons */}
                         </button>
@@ -56,7 +63,7 @@ const Navbar = ({ scrollToAboutUs, scrollToWhatIDo, scrollToServices, scrollToCo
                         {navItems.map((item) => (
                             <button className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white"
                                 key={item.name}
-                                onClick={() => handleButtonClick(item)}
+                                onClick={() => scrollToSection(item.scrollTo)}
                             >
                                 {item.name}
                             </button>
