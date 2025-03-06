@@ -103,7 +103,7 @@ const Services = React.forwardRef((props, ref) => {
                 </div>
               </div>
 
-              <div className="md:relative md:h-[87%] bg-amber-200 lg:h-[90%] md:pb-6">
+              <div className="md:relative md:h-[87%] lg:h-[90%] md:pb-6">
 
                 <ul className="space-y-3 mb-12">
                   {service.features.map((feature, fIndex) => (
