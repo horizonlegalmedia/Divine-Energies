@@ -14,16 +14,22 @@ const Home = () => {
   const consultationRef = useRef(null);
   const letsMeetRef = useRef(null);
 
-  const scrollToAboutUs = () => aboutUsRef.current?.scrollIntoView({ behavior: "smooth" });
-  const scrollToWhatIDo = () => whatIDoRef.current?.scrollIntoView({ behavior: "smooth" });
-  const scrollToServices = () => servicesRef.current?.scrollIntoView({ behavior: "smooth" });
-  const scrollToConsultation = () => consultationRef.current?.scrollIntoView({ behavior: "smooth" });
-  const scrollToLetsMeet = () => letsMeetRef.current?.scrollIntoView({ behavior: "smooth" });
+  // const scrollToAboutUs = () => aboutUsRef.current?.scrollIntoView({ behavior: "smooth" });
+  // const scrollToWhatIDo = () => whatIDoRef.current?.scrollIntoView({ behavior: "smooth" });
+  // const scrollToServices = () => servicesRef.current?.scrollIntoView({ behavior: "smooth" });
+  // const scrollToConsultation = () => consultationRef.current?.scrollIntoView({ behavior: "smooth" });
+  // const scrollToLetsMeet = () => letsMeetRef.current?.scrollIntoView({ behavior: "smooth" });
 
   return (
     <div>
        {/* Navigation */}
-       <Navbar scrollToAboutUs={scrollToAboutUs} scrollToWhatIDo={scrollToWhatIDo} scrollToServices={scrollToServices}  scrollToConsultation={scrollToConsultation} scrollToLetsMeet={scrollToLetsMeet} />
+       <Navbar
+                scrollToAboutUs={aboutUsRef}
+                scrollToWhatIDo={whatIDoRef}
+                scrollToServices={servicesRef}
+                scrollToConsultation={consultationRef}
+                scrollToLetsMeet={letsMeetRef}
+            />
 
       <AboutUs ref={aboutUsRef}/>
       <Services ref={servicesRef}/>

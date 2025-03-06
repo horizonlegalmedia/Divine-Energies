@@ -1,5 +1,3 @@
-// import { SparklesIcon, ChatIcon, HeartIcon } from '@heroicons/react/outline';
-
 import React from "react";
 import { affirmationAndPositiveThinking, manifestationCoaching, mindsetMastery, } from '../images'
 const services = [

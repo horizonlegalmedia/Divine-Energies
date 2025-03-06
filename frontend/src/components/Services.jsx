@@ -1,14 +1,12 @@
-// import { StarIcon, GiftIcon, SparklesIcon } from '@heroicons/react/solid';
-
 import React from "react";
 
 const services = [
   {
     title: "Starter Package",
-    time:"40 mins",
+    time: "40 mins",
     price: "199",
-    featuresTagline:"Video or Audio Call (Zoom)",
     features: [
+      "Video or Audio Call (Zoom)",
       "Magical tricks",
       "Effective solutions",
       "Positive mindset starts",
@@ -19,10 +17,15 @@ const services = [
   },
   {
     title: "Growth Package",
-    time:"60 mins",
+    time: "60 mins",
     price: "499",
-    featuresTagline:"Includes everything in ₹199 package PLUS:",
     features: [
+      "Video or Audio Call (Zoom)",
+      "Magical tricks",
+      "Effective solutions",
+      "Positive mindset starts",
+      "Magical affirmations",
+      "Power of words & thoughts",
       "How to unlock hidden powers",
       "Deep dive into self-transformation",
       "Special guided visualization technique",
@@ -35,8 +38,18 @@ const services = [
     title: "Elite Package",
     time: "90 mins",
     price: "999",
-    featuresTagline:" Includes everything in ₹499 package PLUS:",
     features: [
+      "Video or Audio Call (Zoom)",
+      "Magical tricks",
+      "Effective solutions",
+      "Positive mindset starts",
+      "Magical affirmations",
+      "Power of words & thoughts",
+      "How to unlock hidden powers",
+      "Deep dive into self-transformation",
+      "Special guided visualization technique",
+      "Overcoming self-doubt & fears",
+      "Action plan for personal growth",
       "Exclusive personalized affirmations",
       "Manifestation techniques for success",
       "Mind rewiring strategies for abundance",
@@ -47,7 +60,7 @@ const services = [
   },
 ];
 
-const Services = React.forwardRef((props,ref) => {
+const Services = React.forwardRef((props, ref) => {
   return (
     <section ref={ref} className="py-20 bg-gradient-to-b from-indigo-100 to-purple-100 relative overflow-hidden">
       {/* Decorative elements */}
@@ -69,11 +82,10 @@ const Services = React.forwardRef((props,ref) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div 
+            <div
               key={index}
-              className={`relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow ${
-                service.popular ? 'ring-2 ring-purple-600' : ''
-              }`}
+              className={`relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow ${service.popular ? 'ring-2 ring-purple-600' : ''
+                }`}
             >
               {service.popular && (
                 <div className="absolute top-0 right-0 bg-purple-600 text-white px-4 py-1 rounded-bl-xl rounded-tr-2xl text-sm font-medium">
@@ -81,7 +93,6 @@ const Services = React.forwardRef((props,ref) => {
                 </div>
               )}
               <div className="text-center">
-                {/* <service.icon className="h-12 w-12 text-purple-600 mx-auto mb-6" /> */}
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
                   {service.title}
                 </h3>
@@ -92,29 +103,27 @@ const Services = React.forwardRef((props,ref) => {
                 </div>
               </div>
 
-              <div className="mb-4 text-center font-bold">
-                {service.featuresTagline}
+              <div className="md:relative md:h-[87%] bg-amber-200 lg:h-[90%] md:pb-6">
+
+                <ul className="space-y-3 mb-12">
+                  {service.features.map((feature, fIndex) => (
+                    <li key={fIndex} className="flex items-start">
+                      <div className="flex-shrink-0 mt-1 mr-3">
+                        <div className="w-2 h-2 bg-purple-500 rounded-full" />
+                      </div>
+                      <span className="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <button className={`w-full py-3 rounded-lg font-medium transition-colors md:absolute md:bottom-2 lg:bottom-3 ${service.popular
+                    ? 'bg-purple-600 text-white hover:bg-purple-700'
+                    : 'border-2 border-purple-600 text-purple-600 hover:bg-purple-50'
+                  }`}>
+                  <a href="https://calendly.com/divineenergiesbyshradha/30min" target="_blank">Start Transformation</a>
+
+                </button>
               </div>
-              
-              <ul className="space-y-3 mb-8">
-                {service.features.map((feature, fIndex) => (
-                  <li key={fIndex} className="flex items-start">
-                    <div className="flex-shrink-0 mt-1 mr-3">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full" />
-                    </div>
-                    <span className="text-gray-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <button className={`w-full py-3 rounded-lg font-medium transition-colors ${
-                service.popular 
-                  ? 'bg-purple-600 text-white hover:bg-purple-700'
-                  : 'border-2 border-purple-600 text-purple-600 hover:bg-purple-50'
-              }`}>
-                <a href="https://calendly.com/divineenergiesbyshradha/30min" target="_blank">Start Transformation</a>
-                
-              </button>
             </div>
           ))}
         </div>

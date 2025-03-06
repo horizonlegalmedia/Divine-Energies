@@ -1,5 +1,3 @@
-// import { CalendarIcon, UsersIcon, ChatIcon } from '@heroicons/react/outline';
-
 import React from "react";
 import { manifestation } from "../images";
 
@@ -28,7 +26,6 @@ const Consultation = React.forwardRef((props,ref) => {
               <div className="bg-white rounded-xl p-6 shadow-lg">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 bg-purple-100 p-3 rounded-lg">
-                    {/* <UsersIcon className="h-6 w-6 text-purple-600" /> */}
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
@@ -70,7 +67,6 @@ const Consultation = React.forwardRef((props,ref) => {
               
               {/* Overlay Text */}
               <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                {/* <ChatIcon className="h-8 w-8 mb-4" /> */}
                 <p className="text-xl font-semibold">
                   "The quality of your life is determined by the quality of your conversations"
                 </p>

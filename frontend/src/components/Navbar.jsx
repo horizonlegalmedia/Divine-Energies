@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect,useCallback } from 'react'
 import { Menu, X } from 'lucide-react'; // Import icons from react-lucide
 import { logo } from '../images/index'
 
@@ -11,18 +11,40 @@ const Navbar = ({ scrollToAboutUs, scrollToWhatIDo, scrollToServices, scrollToCo
         { name: "Let's Meet", scrollTo: scrollToLetsMeet },
     ];
 
-    // Function to handle smooth scrolling
-    const scrollToSection = (ref) => {
-        if (ref.current) {
-            setIsMenuOpen(false); // Close the menu
-            window.scrollTo({
-                top: ref.current.offsetTop - 80, // Adjusting the offset
-                behavior: "smooth",
-            });
-        }
-    };
-
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [navHeight, setNavHeight] = useState(64); // Default height based on h-16 (4rem)
+
+     // Get navbar height after initial render
+     useEffect(() => {
+        const navbar = document.querySelector('nav');
+        if (navbar) setNavHeight(navbar.offsetHeight);
+    }, []);
+
+    const scrollToSection = useCallback((ref) => {
+        console.log('Scrolling to:', ref);
+        setIsMenuOpen(false);
+    
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                console.log('Current ref:', ref?.current);
+                if (ref?.current) {
+                    const navbar = document.querySelector('nav');
+                    const currentNavHeight = navbar?.offsetHeight || navHeight;
+                    console.log('Nav height:', currentNavHeight);
+                    console.log('Section position:', ref.current.offsetTop);
+                    
+                    window.scrollTo({
+                        top: ref.current.offsetTop - currentNavHeight,
+                        behavior: "smooth",
+                    });
+
+                    // ref.current?.scrollIntoView({ behavior: "smooth" });
+                }
+            }, 50);
+        });
+    }, [navHeight]);
+
+
     return (
         <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,7 +59,7 @@ const Navbar = ({ scrollToAboutUs, scrollToWhatIDo, scrollToServices, scrollToCo
                     <ul className="hidden md:flex space-x-12">
                         {navItems.map((item) => (
                             <li>
-                                <button onClick={item.scrollTo} className="text-gray-600 font-bold text-sm lg:text-base hover:text-indigo-600"
+                                <button onClick={() => scrollToSection(item.scrollTo)} className="text-gray-600 font-bold text-sm lg:text-base hover:text-indigo-600"
                                 >{item.name}
                                 </button>
                             </li>
