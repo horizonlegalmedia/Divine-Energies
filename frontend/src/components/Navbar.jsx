@@ -71,7 +71,7 @@ const Navbar = ({ scrollToAboutUs, scrollToWhatIDo, scrollToServices, scrollToCo
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className="inline-flex items-center justify-center p-2 rounded-md hover:bg-purple-300 focus:outline-none"
-                        >
+                        >                                   
                             {isMenuOpen ? <X size={24} /> : <Menu size={24} />} {/* Use react-lucide icons */}
                         </button>
                     </div>
